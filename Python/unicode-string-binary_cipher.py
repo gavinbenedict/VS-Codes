@@ -4,14 +4,20 @@ Encode:
     step2 add original string in even indexes
     step3 convert the odd parts to unicode and even to binary
     step3 return the final string
+
+Decodde
 """
+import sys
 def accept():
-    inn=input("Pls choose:\n1.Decode(D)\n2.Encode(E)\n")
+    inn=input("Pls choose:\n1.Encode(E)\n2.Decode(D)\n\nYour choice:")
     opt=inn.lower()
     if opt=='e':
         s=input("Enter a String:")
-    if opt=='d':
+    elif opt=='d':
         s=(input("Enter the cipher string:"))
+    else:
+        print("Invalid choice")
+        sys.exit(0)
     return s,opt
 
 def encode(s):
@@ -42,6 +48,5 @@ def choose(b):
         print(encode(a))
     if b=="d":
         print(decode(a))
-
 a,b=accept()
 choose(b)
