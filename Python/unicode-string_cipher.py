@@ -27,17 +27,13 @@ def encode(s):
                  
 
 def decode(s):
-    l=s.strip().split()   #[110, 103, 105, 97, 118, 118, 97, 105, 103, 110]
-    ns=[chr(int(x)) for x in l]
-    rst=[]
-    st=[]
-    for i in range(0,len(ns)-1,2):
-        rst.append(ns[i])
-        st.append(ns[i+1])
-    fw="".join(st)
-    return fw
-    
-    
+    s = s.replace(',', ' ')  # ✅ replace commas with spaces
+    l = s.strip().split()
+    decoded_chars = []
+    for i in range(1, len(l), 2):  # Only pick odd indices = original string
+        decoded_chars.append(chr(int(l[i])))
+    return ''.join(decoded_chars)
+
     
 
 def choose(b):
