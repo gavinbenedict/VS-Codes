@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/gabeee/Programming/Learning/DSA/Creation_Of_a_Node'
+relocations:     []
+...
